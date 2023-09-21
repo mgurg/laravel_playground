@@ -1,0 +1,12 @@
+.php-cs-fixer.cache
+.phpunit.result.cache
+composer.lock
+composer.phar
+phpstan.neon
+.idea/
+.vscode/
+vendor/
+data/
+.env
+.env.backup
+.env.production
