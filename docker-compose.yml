@@ -40,7 +40,18 @@ services:
       MYSQL_PASSWORD: "${DB_PASSWORD}"
     volumes:
       - "./data/db/mysql:/var/lib/mysql"
-#        - './db/init.sql:/docker-entrypoint-initdb.d/01init.sql'
+  # postgres:
+  #   image: postgres:15-alpine
+  #   volumes:
+  #     - "./data/db/psql:/var/lib/postgresql/data"
+  #   environment:
+  #     - POSTGRES_USER="${DB_USERNAME}"
+  #     - POSTGRES_PASSWORD="${DB_PASSWORD}"
+  #     - POSTGRES_DB="${DB_DATABASE}"
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - laravel
   # redis:
   #   image: redis:7.2
   #   ports:
