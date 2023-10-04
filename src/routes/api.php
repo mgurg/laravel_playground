@@ -24,13 +24,3 @@ Route::get('health', function () {
     return 'OK';
 });
 
-
-Route::group(['middleware' => [
-    TenantHeader::class,
-    InitializeTenancyByRequestData::class,
-    ]], function () {
-
-    Route::get('/book', function () {
-        return 'OK';
-    });
-});
