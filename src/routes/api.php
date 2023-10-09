@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\RegisteredTenantController;
+use App\Http\Middleware\TenantHeader;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\TenantHeader;
-use Stancl\Tenancy\Middleware\InitializeTenancyByRequestData;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('health', function () {
     return 'OK';
 });
+
+
+Route::get('register', [RegisteredTenantController::class, 'create']);
+Route::post('register', [RegisteredTenantController::class, 'store']);
 
